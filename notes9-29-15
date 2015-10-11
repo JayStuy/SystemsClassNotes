@@ -1,0 +1,18 @@
+SOTD: In The Meantime - Spacehog
+Aim: Time to stop stringing you along.
+
+C Strings (cstrings)
+	Strings are character arrays that end with a null character (either '' or 0 or '\0').
+	
+	The terminating null character is a convention, stirng functions will not work correctly without it.
+	
+	The following are valid ways to declare strings:
+	
+		char s[256];
+			Normal array declaration, allocates 256 bytes, nothing is set automatically
+			
+		char s[256] = "Imagine";
+			Allocates 256 bytes, puts "Imagine" in the first 7 bytes AND adds a null at the end of the 8th byte.
+			
+		char s[] = "Tuesday";
+			Allocates 8 bytes, puts "Tuesday" in the 7 bytes AND adds a null at the 8th byte.

@@ -1,0 +1,60 @@
+SOTD: Papa's Got a brand New Bag - James Brown
+
+Aim: Always structure your code well.
+
+Dynamic Memory Allocation
+	Normal memory allocation happens on the stack
+	
+	Stack memory gets released as functions pop off.
+	
+	Dynamic memory allocation is located on the heap, it persists even after the function that created it pops off the stack.
+	
+	You must manually release dynamically allocated memory from the heap.
+	
+	
+free
+	Releases dynamically allocated memory.
+	
+	Takes one parameter, a pointer to the beginning of a dynamically allocated block of memory.
+	
+	Every call to malloc/calloc should have a corresponding call to free
+	
+	int *p, *f;
+	p = (int *)malloc(20);
+	f = p;
+	p += 3;
+	free(f);
+	
+	
+Typedef
+	provide a new name for an existing data type.
+	
+	typedef <real type> <new name>;
+	
+	ex:
+		typedef unsigned int size_t;
+		size_t x = 139; //x is really an unsigned int
+		
+		
+Struct
+	A collection of values in a single data type
+	
+	struct {int a; char x;} s;
+	
+		Here, s is a variable of type struct{int a; char x;}
+		
+	
+	We use the . operator to access a value inside a struct
+		s.a = 10;
+		s.x = '@';
+		
+		
+	struct foo{int a; char x;};
+	
+		In this example, foo is a prototype for this kind of struct, to be used later
+		
+		struct foo s;
+		
+	typedef struct {int a; char x;} foo;
+	
+		Here, foo is a typedef for the struct
