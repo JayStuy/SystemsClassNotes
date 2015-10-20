@@ -14,3 +14,19 @@ node* insert_front( node* n, int i ) {
 	
 	return &new;
 }
+
+
+The issue is you need to dynamically allocate the memory
+
+
+
+Code Stuff:
+
+	typedef struct n {
+		int i;
+		struct n* next;
+	} node;
+
+	void print_list( node* );
+	node* insert_front( node*, int );
+	node* free_list( node* );
