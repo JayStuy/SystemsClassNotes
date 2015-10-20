@@ -1,0 +1,26 @@
+SOTD: Wheels - Cake
+
+Aim: File this under useful information.
+
+Do Now: What are the different kinds of file permissions?
+
+Permissions:
+	Who can access- read, write, execute
+	
+	
+There are three permission "areas"
+	user, group, others
+	
+	each area can have its own permissions:
+		644 => user: read + write, group: read, other: read
+		
+		read		write		execute
+		1			0			0		=> 4
+		0			1			0		=> 2
+		0			0			1		=> 1
+		
+The owner of a file can always change permissions on that file, even if they do not have access to the file.
+
+use chmod to change permissions
+chown to change owner
+chgrp to change the group
