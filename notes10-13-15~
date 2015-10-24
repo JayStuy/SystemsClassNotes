@@ -1,0 +1,32 @@
+SOTD: Low Rider - War
+
+Aim: Zelda's in trouble, get Link!
+
+Do Now: What's wrong with this function?
+		(Assume node has been declared correctky)
+		
+node* insert_front( node* n, int i ) {
+
+	node new;
+	
+	new.i = i;
+	new.next = n;
+	
+	return &new;
+}
+
+
+The issue is you need to dynamically allocate the memory
+
+
+
+Code Stuff:
+
+	typedef struct n {
+		int i;
+		struct n* next;
+	} node;
+
+	void print_list( node* );
+	node* insert_front( node*, int );
+	node* free_list( node* );
