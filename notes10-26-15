@@ -1,0 +1,30 @@
+SOTD: Crazy - Gnarls Barkley
+
+Aim: Seek and ye shall find
+
+umask - <sys/stat.h>
+
+	Set the file certain permission mask
+	
+	By default, created files are not given the exact permissions provided in the mode argument to open.
+	
+	A mask is applied that automatically shuts off certain permissions.
+	
+	Umask is applied by using bitwise negation on the mask, then bitwise anding it to the mode.
+		new_permissions = ~mask & mode
+		
+	The default mask is 022, which shuts off write permissions for group and other.
+	
+	umask( <MASK> );
+		You can define the umask unsing a 3 digit octal #
+		umask( 0000 0;
+		
+	lseek - <unistd.h>
+	
+		Set the current position in an open file
+		
+		lseek( <FILE DESCRIPTOR>, <OFFSET>, <WHENCE> );
+		
+	offset
+		Number of bytes to move the position by.
+		Can be negative.
