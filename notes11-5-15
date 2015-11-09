@@ -1,0 +1,29 @@
+SOTD: Us and Them - Pink Floyd
+
+Aim: Go fork off (another process)
+
+
+	fork() - <unistd.h>
+		Creates a seperate process based on the current one, the new process is called the child, the original is the parent.
+		
+		The child process is a duplicate of the parent process. All parts of the parent process are copied, including stack and heap memory, and the file table.
+		
+			A quick note on threads: A thread is a seperate executable entity similar to a child process, except a thread is not a standalone process. It does not have its own
+			memory space, instead it shares it's parent's memory.
+			
+		Returns 0 to the child and the child's pid to the parent or -1(errno).
+		
+		If a parent process ends before the child, the child's new parent pid is 1.
+		
+		
+	wait - <unistd.h>
+	
+		Stops a parent process from running until any child has provided status information to the parent (usually the child has exited).
+		
+		returns the pid of the child that exited, or -1(errno)
+		
+		wait( int* status )
+			The parameter (status) is used to store information about how the process exited.
+			
+			There are macros to get information out of this value.
+				WEXITSTATUS( int ), will return what the process returned when it exited.
