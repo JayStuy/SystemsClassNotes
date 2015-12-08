@@ -1,0 +1,58 @@
+SOTD: Plush - Stone Temple Pilots
+
+Aim: Memes
+
+Shared Memory!
+
+	ftok
+	
+		Generate a key useful for IPC functions
+		
+		ftok( path, x )
+		
+			path
+				A path to some file, the file must be accessible by the program running.
+				
+			x
+				An int used to generate the key.
+				
+			The generated key will be the same if path and x are the same for separate calls.
+			
+		sd = shmget( ftok("dir/file", 12), 1024, IPC_CREAT | 0664 )
+		
+	shmdt
+	
+		Detach a variable from a shared memory segment.
+		
+		Returns 0 upon success or -1 upon failure.
+		
+		shmdt( pointer )
+		
+			pointer
+				The address used to access the segment
+				
+		example
+			shmdt( p );
+			
+	shmctl
+		Each share memory segment has metadata that can be stored in a struct (struct shmid_ds)
+		
+		Some of that data stored: last access, size, pid of creator, pid of last modification
+		
+		Perform operations on the shared memory segment
+		
+		shmctil( descriptor, command, buffer )
+		
+			descriptor
+				Return value of shmget
+				
+			commands:
+				IPC_STAT: populate the buffer (struct shmid_ds) with information
+				
+				IPC_SET: set some of the information for the segment to the info in buffer
+				
+				IPC_RMID: Remove a shared memory segment
+				
+		example:
+			struct shmid_ds d;
+			shmctl( sd, IPC_RMID, &d )
