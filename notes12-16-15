@@ -1,0 +1,28 @@
+SOTD: Cantaloupe - US3
+
+Aim: Always remember to tip your servers
+
+Server/Client Program Paradigms
+
+	Handshake
+		A procedure to ensure that a connection has been established
+		
+		Both ends of the connection must verify that they can send and receive data from each other.
+		
+		Basic Handshake Procedure:
+			1) Server creates a named pipe
+				(Well Known Pipe)
+			
+			2) Server waits for a connection
+			
+			3) Client creates a "private" names pipe
+			
+			4) Client connects to server and sends the private pipe name.
+			
+			5) Client waits for private pipe connection.
+			
+			6) Server receives client's message and removes the WKP
+			
+			7) Server connects to client pipe, sending an initial acknowledgment message.
+			
+			8) Client receives server's message, remove its private pipe.
